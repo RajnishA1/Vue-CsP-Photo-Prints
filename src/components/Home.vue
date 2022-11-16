@@ -35,7 +35,7 @@ export default {
   display: grid;
   height: 250vh;
   grid-template-columns: .20fr 1fr;
-  grid-template-rows: 0.08fr 1.5fr;
+  grid-template-rows: 0.05fr 1.5fr;
   grid-template-areas:
     "nav nav"
     "SideBar Content"
