@@ -6,7 +6,7 @@
       <i class="fas fa-times" id="cancel"></i>
     </label>
   <div class="sidebar">
-    <header>Csp Photo Print</header>
+    <!-- <header>Csp Photo Print</header> -->
     <ul>
       <li>
         <a href="#"><i class="fas fa-qrcode" name="image-outline"></i>Home</a>
@@ -44,12 +44,14 @@ ul li {
   text-decoration: none;
 }
 .sidebar{
-  top: -10px;
-  position: fixed;
-  /* left: -340px; */
-  width: 340px;
-  height: 120%;
-  background: #042331;
+  
+  position: relative;
+  top: -25px;
+  left: 0;
+
+  width: 335px;
+  height: 100%;
+  background: #0f3242;
   transition: all 0.5s ease;
 
 }
@@ -87,7 +89,7 @@ ul li:hover a{
   margin-right: 16px;
 
 }
-#check{
+/* #check{
   display: none;
 }
 label #btn, label #cancel{
@@ -129,7 +131,7 @@ label #cancel {
 #check:checked ~ label #cancel{
   left: 270px;
 
-}
+} */
 /* #check:checked ~ section{
   margin-left: 250px;
 
@@ -149,3 +151,5 @@ section{
 
 
 </style>
+
+

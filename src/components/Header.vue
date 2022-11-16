@@ -15,7 +15,7 @@
 
 </div>
  
-    <component :is="tab" />
+
  
 </template>
 <script>
@@ -38,11 +38,7 @@ export default {
 </script>
 <style scoped>
 .headerDiv{
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-  
-
+ 
 
 }
 nav{
@@ -65,6 +61,7 @@ nav ul li a{
     display: inline-block;
     padding: 10px 20px;
     font-weight: bold;
+    color: white;
 
 }
 nav ul li a:hover{

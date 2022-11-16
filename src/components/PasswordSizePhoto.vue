@@ -1,7 +1,7 @@
 <template>
 
 
-<div class="mainDiv">
+<center>
 
     <h1
       style="
@@ -60,48 +60,49 @@
     </div>
 
     <div>
-      <div class="img-container" v-if="display">
-        <img
-          ref="image"
-          :src="preview"
-          crossorigin
-          alt="logo.png"
-          class="editableImg"
-        />
+        <div class="img-container" v-if="display">
+          <img
+            ref="image"
+            :src="preview"
+            crossorigin
+            alt="logo.png"
+            class="editableImg"
+          />
+        </div>
+
+
+        <div class="optionDiv" id="optionDiv" v-if="optionDivVisible">
+      
+
+          <select   v-model="NumberOfPhoto" aria-level="Choose Photo" >
+            <option value="111111" selected hidden>6 Photo A4</option>
+            <option value="111111111111">12 Photo A4</option>
+            <option value="111111111111111111111111">24 Photo A4</option>
+            <option value="parrot">6 Photo A4</option>
+            <option value="spider">6 Photo A4der</option>
+            <option value="goldfish">6 Photo A4</option>
+          </select>
+        </div>
+
+        <div class="photoList" id="6photo" v-if="photoListVisible">
+          <img
+            :src="destination"
+            class="img-preview"
+            v-for="index in NumberOfPhoto"
+            :key="index"
+          />
+        </div>
+    </div>
+
+      <div class="bottomDiv" v-if="bottomDivVisible">
+        <button @click="rotate" class="PrintBtn">Rotate</button>
+        <button type="button" class="PrintBtn" v-on:click="printingPhoto" id="PrintBtn">
+          Print Photo
+        </button>
       </div>
-
-
-      <div class="optionDiv" id="optionDiv" v-if="optionDivVisible">
     
 
-        <select   v-model="NumberOfPhoto" aria-level="Choose Photo" >
-          <option value="111111" selected hidden>6 Photo A4</option>
-          <option value="111111111111">12 Photo A4</option>
-          <option value="111111111111111111111111">24 Photo A4</option>
-          <option value="parrot">6 Photo A4</option>
-          <option value="spider">6 Photo A4der</option>
-          <option value="goldfish">6 Photo A4</option>
-        </select>
-      </div>
-
-      <div class="photoList" id="6photo" v-if="photoListVisible">
-        <img
-          :src="destination"
-          class="img-preview"
-          v-for="index in NumberOfPhoto"
-          :key="index"
-        />
-      </div>
-    </div>
-
-    <div class="bottomDiv" v-if="bottomDivVisible">
-      <button @click="rotate" class="PrintBtn">Rotate</button>
-      <button type="button" class="PrintBtn" v-on:click="printingPhoto">
-        Print Photo
-      </button>
-    </div>
-  </div>
-
+</center>
 
 </template>
 
@@ -178,18 +179,6 @@ export default {
 
 <style scoped>
 
-.mainDiv{
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  text-align: center;
-
- width: 420px;
- margin-right: auto;
-  margin-left: auto;
- 
-
-}
 
 .optionDiv {
   width: 250px;
@@ -198,6 +187,7 @@ export default {
   color: black;
   text-align: center;
   margin-top: 10px;
+  position: relative;
   margin-bottom: 10px;
 }
 .optionDiv label {
@@ -234,6 +224,7 @@ export default {
 }
 #inputTag {
   display: none;
+
 }
 label {
   cursor: pointer;
@@ -270,15 +261,22 @@ label {
   width: 200px;
   height: 60px;
   color: white;
+  background: #042331;
   font-size: 20px;
   margin-bottom: 20px;
   border: 2px solid white;
+
 
   cursor: pointer;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
 }
+
+#PrintBtn{
+    margin-left: 10px;
+}
+
 button {
   background: #333;
   width: 200px;
@@ -291,12 +289,14 @@ button {
   cursor: pointer;
 }
 .bottomDiv {
-  width: 400px;
+
   height: 60px;
   border-radius: 10px;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
-  border: 2px solid white;
+
+
 }
 .photoList {
   width: 780px;
